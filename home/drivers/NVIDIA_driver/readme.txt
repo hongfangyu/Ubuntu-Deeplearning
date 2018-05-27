@@ -5,7 +5,7 @@
 1.准备适合显卡的NVIDIA驱动
 https://www.nvidia.com/Download/index.aspx
 
-2.禁止Ubuntu默认的nouveau第三方NVIDIA驱动
+2.禁止Ubuntu默认的nouveau第三方NVIDIA驱动(以后也不用更改回来)
 sudo gedit /etc/modprobe.d/blacklist.conf
 在最后面另起一行加上：
 blacklist nouveau
@@ -18,9 +18,8 @@ reboot
 lsmod | grep nouveau
 
 3. 禁用X-Window服务
+Ctrl-Alt+F1输入用户名和密码以后，再执行上：
 sudo service lightdm stop
-这会关闭图形界面，直接进入命令行模式。（或者先Ctrl-Alt+F1输入用户名和密码以后，再执行上一句）
-输入用户名和密码
 进入驱动所在的文件夹下
 给驱动run文件赋予执行权限：
 sudo chmod +x NVIDIA-Linux-x86_64-384.59.run
@@ -38,5 +37,7 @@ sudo sh ./NVIDIA-Linux-x86_64-384.59.run –no-opengl-files
 4.测试驱动
 #若列出GPU的信息列表，表示驱动安装成功
 nvidia-smi
-#若弹出设置对话框，亦表示驱动安装成功
-nvidia-settings
+
+5.恢复图形界面
+sudo service lightdm start
+
