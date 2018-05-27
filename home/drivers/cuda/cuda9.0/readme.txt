@@ -47,3 +47,44 @@ cat /usr/local/cuda/version.txt
 或者
 nvcc -V
 
+为了安装全面的cuda(一些额外的功能，加快神经网络前向传递速度，主要按照tensorflow的安装要求)
+1.查看cuda-command-line-tool
+sudo apt-cache search cuda-command-line-tool
+如果有输出，如：
+cuda-command-line-tools-8-0 - CUDA command-line tools
+cuda-command-line-tools-9-0 - CUDA command-line tools
+cuda-command-line-tools-9-1 - CUDA command-line tools
+则选择需要的进行安装，如：
+sudo apt install cuda-command-line-tools-9-0
+有输出则直接进行第3步，否则进行第2步
+
+2.否则，进行以下操作：
+进入以下网站下载以下必要的deb，按照顺序安装文件
+https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
+
+sudo dpkg -i cuda-license-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-misc-headers-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-core-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-driver-dev-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-cudart-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-cudart-dev-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-command-line-tools-9-0_9.0.176-1_amd64.deb
+
+查看cuda-command-line-tool
+sudo apt-cache search cuda-command-line-tool
+如果有输出，如：
+cuda-command-line-tools-8-0 - CUDA command-line tools
+cuda-command-line-tools-9-0 - CUDA command-line tools
+cuda-command-line-tools-9-1 - CUDA command-line tools
+则选择需要的进行安装，如：
+sudo apt install cuda-command-line-tools-9-0
+
+3.进入以下网站下载以下必要的deb，按照顺序安装文件
+https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
+
+sudo dpkg -i cuda-cublas-9-0_9.0.176-1_amd64.deb
+sudo dpkg -i cuda-cublas-9-0_9.0.176.1-1_amd64.deb
+sudo dpkg -i cuda-cublas-9-0_9.0.176.2-1_amd64.deb
+
+4.
+sudo apt-get install libnvinfer4
