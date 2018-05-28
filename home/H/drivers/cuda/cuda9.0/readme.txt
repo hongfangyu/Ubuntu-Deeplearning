@@ -9,7 +9,7 @@ sudo service lightdm stop
 
 3.开始安装
 进入驱动所在的文件夹下
-sudo ./cuda_8.0.61_375.26_linux.run --no-opengl-libs
+sudo sh ./cuda_8.0.61_375.26_linux.run --no-opengl-libs
 可选参数：
 --no-opengl-libs：表示只安装驱动文件，不安装OpenGL文件。必需参数，原因同上。注意：不是-no-opengl-files。
 --uninstall (deprecated)：用于卸载CUDA Driver（已废弃）。
@@ -85,6 +85,3 @@ https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
 sudo dpkg -i cuda-cublas-9-0_9.0.176-1_amd64.deb
 sudo dpkg -i cuda-cublas-9-0_9.0.176.1-1_amd64.deb
 sudo dpkg -i cuda-cublas-9-0_9.0.176.2-1_amd64.deb
-
-4.
-sudo apt-get install libnvinfer4
