@@ -1,0 +1,5 @@
+20180527
+####固定cudnn版本
+sudo apt-mark hold libcudnn7 libcudnn7-dev
+释放
+sudo apt-mark unhold libcudnn7 libcudnn7-dev

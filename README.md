@@ -1,2 +1,5 @@
 # Ubuntu-Deeplearning
-Build a Ubuntu deep learning system
+Build a good use Ubuntu deep learning system
+
+
+
