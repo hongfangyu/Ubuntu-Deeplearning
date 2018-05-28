@@ -1,0 +1,13 @@
+1.20180526
+禁止更新任何版本的linux内核方法：(已执行by hongfangyu）
+sudo apt-mark hold linux-image-generic
+sudo apt-mark hold linux-headers-generic
+如果需要恢复原来的设定的话即允许更新内核，执行如下命令即可：
+sudo apt-mark unhold linux-image-generic
+sudo apt-mark unhold linux-headers-generic
+
+2.20180527
+####固定cudnn版本
+sudo apt-mark hold libcudnn7 libcudnn7-dev
+释放
+sudo apt-mark unhold libcudnn7 libcudnn7-dev
