@@ -1,6 +1,6 @@
 ####这里是安装深度学习框架及相关软件的文件夹
 第一部分 安装tensorflow
-1.安装tensorflow GPU版本（参照官网）
+1.在此文件夹下建立tensorflow文件夹，安装tensorflow GPU版本（参照官网）
 启动和关闭tensorflow的python虚拟环境：
 source /home/gaoyuxin/H/DL/tensorflow/bin/activate
 deactivate
