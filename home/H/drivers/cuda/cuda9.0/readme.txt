@@ -85,6 +85,8 @@ https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/
 sudo dpkg -i cuda-cublas-9-0_9.0.176-1_amd64.deb
 sudo dpkg -i cuda-cublas-9-0_9.0.176.1-1_amd64.deb
 sudo dpkg -i cuda-cublas-9-0_9.0.176.2-1_amd64.deb
+sudo dpkg -i cuda-cublas-9-0_9.0.176.3-1_amd64.deb
+sudo dpkg -i cuda-cublas-9-0_9.0.176.4-1_amd64.deb
 
 4.
 sudo apt-get install libnvinfer4
