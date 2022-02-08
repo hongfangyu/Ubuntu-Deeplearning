@@ -4,19 +4,14 @@
 https://developer.nvidia.com/rdp/cudnn-archive
 
 2.解压文件到此目录，并在次文件夹下执行
-sudo cp cuda/include/cudnn.h /usr/local/cuda/include
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
-sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+sudo cp cuda/include/cudnn*.h /usr/local/cuda/include 
+sudo cp -P cuda/lib/libcudnn* /usr/local/cuda/lib64 
+sudo chmod a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*
 
 this:
-sudo cp cuda/include/cudnn.h /usr/local/cuda-9.0/include
+sudo cp cuda/include/cudnn*.h /usr/local/cuda-9.0/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda-9.0/lib64
-sudo chmod a+r /usr/local/cuda-9.0/include/cudnn.h /usr/local/cuda-9.0/lib64/libcudnn*
-
-sudo cp cuda/include/* /usr/local/cuda-9.0/include/
-sudo cp cuda/lib64/* /usr/local/cuda-9.0/lib64/
-sudo chmod a+r /usr/local/cuda-9.0/lib64/libcudnn*
-sudo chmod a+r /usr/local/cuda-9.0/include/cudnn.h
+sudo chmod a+r /usr/local/cuda-9.0/include/cudnn*.h /usr/local/cuda-9.0/lib64/libcudnn*
 
 Read more at: http://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html#ixzz52pJLKn3G 
 Follow us: @GPUComputing on Twitter | NVIDIA on Facebook
