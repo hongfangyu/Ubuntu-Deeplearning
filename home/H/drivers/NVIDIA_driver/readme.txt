@@ -17,22 +17,32 @@ lsmod | grep nouveau
 reboot
 lsmod | grep nouveau
 
-3. 禁用X-Window服务
-Ctrl-Alt+F1输入用户名和密码以后，再执行上：
+3. 禁用X-Window服务(为了避免x server没有关闭的情况)
+执行：
+sudo init 3
 sudo service lightdm stop
+sudo killall Xorg
+ps ax | grep X
+对于开着的xorg相关进程，直接杀掉
+kill -9 PID
 进入驱动所在的文件夹下
 给驱动run文件赋予执行权限：
 sudo chmod +x NVIDIA-Linux-x86_64-384.59.run
 最好先卸载以前可能存在的驱动：
 sudo sh ./NVIDIA-Linux-x86_64-384.59.run --uninstall
 安装驱动
-sudo sh ./NVIDIA-Linux-x86_64-384.59.run –no-opengl-files
+sudo sh ./NVIDIA-Linux-x86_64-384.59.run -no-opengl-files
 以下参数可选：
 –no-opengl-files：表示只安装驱动文件，不安装OpenGL文件。这个参数不可省略，否则会导致登陆界面死循环，英语一般称为”login loop”或者”stuck in login”。
 –no-x-check：表示安装驱动时不检查X服务，非必需。
 –no-nouveau-check：表示安装驱动时不检查nouveau，非必需。
 -Z, --disable-nouveau：禁用nouveau。此参数非必需，因为之前已经手动禁用了nouveau。
 -A：查看更多高级选项。
+
+设置对应的CC和CXX，用来编译适kernel，如
+export CC=/usr/bin/gcc-5
+export CXX=/usr/bin/g++-5
+选择不使用dkms，同时要安装32适配库
 
 4.测试驱动
 #若列出GPU的信息列表，表示驱动安装成功
